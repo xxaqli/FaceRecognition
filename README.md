@@ -1,2 +1,2 @@
 # FaceRecognition
-Android FaceRecognition by applying face++ API
+Android APP by applying face++ API to realize face recognition
