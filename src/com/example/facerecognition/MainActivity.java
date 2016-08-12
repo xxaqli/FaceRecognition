@@ -157,8 +157,14 @@ public class MainActivity extends Activity {
 		//设置画笔参数
 		Paint paint = new Paint();
 		paint.setColor(Color.RED);
-		//paint.setStrokeWidth(Math.max(img.getWidth(), img.getHeight()) / 300f);
-		paint.setStrokeWidth(3);
+		paint.setStrokeWidth(Math.max(img.getWidth(), img.getHeight()) / 300f);
+		//paint.setStrokeWidth(3);
+		
+		//设置字体参数
+		Paint paint_text=new Paint();
+		paint_text.setColor(Color.BLUE);
+		paint_text.setTextSize(24);
+		//paint_text.setStrokeWidth(Math.max(img.getWidth(), img.getHeight()) / 10f);
 		
 		try{
 			//解析JSON数据
@@ -197,6 +203,8 @@ public class MainActivity extends Activity {
 				//得到性别信息  
                 String gender=faceInfo.getJSONObject(i).getJSONObject("attribute").getJSONObject("gender").getString("value");
                 
+                
+                canvas.drawText(gender+":"+age+"", x-w, y, paint_text);
                 /*
                 //绘制年龄，性别
                 Bitmap ageBitmap=buildAgeBitmap(age, "Male".equals(gender));
